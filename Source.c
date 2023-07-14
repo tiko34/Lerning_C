@@ -1,49 +1,40 @@
 
+#include <stdio.h> 
 
-#include <stdio.h>
+#include <locale.h> 
 
-#include <locale.h>
+int main()
 
-main()
 {
-
 	setlocale(LC_ALL, "Rus");
 
-	int fail = 0; // кол-во неудачных экзаменов
+	unsigned int counter;
 
-	int pass = 0; // кол-во удачных экзаменов
+	int grade;
 
-	int student = 0;  //кол-во студентов
+	int total;
 
-	int check = 0;  //Ввод пользователя
+	int average;
 
-	while (student < 10)
+	total = 0;
 
+	counter = 1;
+
+	printf("%s", "Вычисление среднего значения целого числа\n");
+
+	while (counter <= 10)
 	{
-		printf("Введите результат студента ( 1 = Сдал, 2 = Не сдал):\t");
-		
-		scanf_s("%d", &check);
+		printf("%s", "Введите целое число:\t");
 
-		if (check == 1)
-		{
-			pass++;
-		}
-		else
-		{
-			fail++;
-		}
+		scanf_s("%d", &grade);
 
-		student++;
+		total = total + grade;
+
+		counter++;
 	}
+	average = total / 10;
 
-	printf("Количество студентов сдавших экзамены:\t%d\n",pass);
-
-	printf("Количество студентов несдавших экзамены:\t%d\n",fail);
-
-	if (pass >= 8)
-	{
-		printf("%s", "Премировать преподавателя");
-	}
+	printf("Среднее число:\t%d", average);
 
 	return 0;
 
