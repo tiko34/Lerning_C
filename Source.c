@@ -1,6 +1,8 @@
 
 #include <stdio.h>
 
+#include <locale.h>
+
 int Adding_number(int a, int b)
 {
 
@@ -10,23 +12,25 @@ int Adding_number(int a, int b)
 
 int main()
 {
-	printf("Adding two numbers in function\n");
+	setlocale(LC_ALL, "Rus");
+
+	printf("—ложение двух числе с использованием функции\n");
 
 	int one;
 
 	int two;
 
-	printf("Enter 1 number\n");
+	printf("¬ведите первое целое число:\t");
 
 	scanf_s("%d", &one);
 
-	printf("Enter 2 number\n");
+	printf("¬ведите второе целое число:\t");
 
 	scanf_s("%d", &two);
 
 	int res = Adding_number(one, two);
 
-	printf("Sum number:%d\t", res);
+	printf("—умма двух целых чисел:%d\t", res);
 
 	return 0;
 }
