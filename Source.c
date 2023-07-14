@@ -1,50 +1,34 @@
 
-
 #include <stdio.h>
 
 #include <locale.h>
 
-main()
+int Adding_number(int a, int b)
 {
 
+	return a + b;
+
+}
+
+int main()
+{
 	setlocale(LC_ALL, "Rus");
 
-	int fail = 0; // кол-во неудачных экзаменов
+	int one;
 
-	int pass = 0; // кол-во удачных экзаменов
+	int two;
 
-	int student = 0;  //кол-во студентов
+	printf("Введите первое целое число:\t");
 
-	int check = 0;  //Ввод пользователя
+	scanf_s("%d", &one);
 
-	while (student < 10)
+	printf("Введите второе целое число:\t");
 
-	{
-		printf("Введите результат студента ( 1 = Сдал, 2 = Не сдал):\t");
-		
-		scanf_s("%d", &check);
+	scanf_s("%d", &two);
 
-		if (check == 1)
-		{
-			pass++;
-		}
-		else
-		{
-			fail++;
-		}
+	int res = Adding_number(one, two);
 
-		student++;
-	}
-
-	printf("Количество студентов сдавших экзамены:\t%d\n",pass);
-
-	printf("Количество студентов несдавших экзамены:\t%d\n",fail);
-
-	if (pass >= 8)
-	{
-		printf("%s", "Премировать преподавателя");
-	}
+	printf("Сумма двух целых чисел:\t%d", res);
 
 	return 0;
-
 }
